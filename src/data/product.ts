@@ -105,14 +105,9 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
   youtubeVideoUrl: "",
   bankAccounts: [
     {
-      bankName: "Garanti BBVA",
-      accountHolder: "LİFEGO MOBİL TEKNOLOJİ VE TELEMATİK SİSTEMLERİ",
-      iban: "TR42 0006 2000 4120 0006 2984 10",
-    },
-    {
-      bankName: "Ziraat Bankası",
-      accountHolder: "LİFEGO MOBİL TEKNOLOJİ VE TELEMATİK SİSTEMLERİ",
-      iban: "TR89 0001 0021 4589 6321 4500 01",
+      bankName: "QNB Finansbank / EFT & FAST",
+      accountHolder: "LIFE TEKNOLOJİ TURİZM İNŞAAT REKLAM DIŞ TİC LTD ŞTİ.",
+      iban: "TR43 0011 1000 0000 0089 5849 57",
     },
   ],
 };

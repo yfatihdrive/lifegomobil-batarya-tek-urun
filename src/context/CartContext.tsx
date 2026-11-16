@@ -53,7 +53,7 @@ const CartContext = createContext<CartContextValue | undefined>(undefined);
 
 const CART_STORAGE_KEY = "lifegomobil_cart_v1";
 const ORDERS_STORAGE_KEY = "lifegomobil_orders_v1";
-const CONFIG_STORAGE_KEY = "lifegomobil_config_v2";
+const CONFIG_STORAGE_KEY = "lifegomobil_config_v3";
 
 export function formatTRY(amount: number): string {
   return (

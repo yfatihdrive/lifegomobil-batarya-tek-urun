@@ -145,7 +145,7 @@ function OrderConfirmContent() {
               yazınız:
             </p>
 
-            <div className="grid sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 gap-3">
               {siteConfig.bankAccounts.map((acc, idx) => (
                 <div
                   key={idx}
@@ -154,12 +154,12 @@ function OrderConfirmContent() {
                   <div className="text-xs font-extrabold text-orange-400">
                     {acc.bankName}
                   </div>
-                  <div className="text-[11px] text-slate-300 font-semibold">
-                    Alıcı: {acc.accountHolder}
+                  <div className="text-xs text-slate-200 font-bold">
+                    ALICI: {acc.accountHolder}
                   </div>
-                  <div className="flex items-center justify-between gap-2 pt-1">
-                    <code className="text-xs font-mono text-white font-bold">
-                      {acc.iban}
+                  <div className="flex items-center justify-between gap-2 pt-1 flex-wrap">
+                    <code className="text-xs sm:text-sm font-mono text-white font-bold">
+                      IBAN NO: {acc.iban}
                     </code>
                     <button
                       type="button"

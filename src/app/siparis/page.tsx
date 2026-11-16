@@ -552,8 +552,7 @@ export default function CheckoutPage() {
                           </span>
                         </div>
                         <p className="text-xs text-slate-600 mt-0.5">
-                          Sipariş onay ekranında şirket IBAN bilgilerimiz
-                          gösterilir.
+                          Sipariş onay ekranında ve aşağıda şirket IBAN bilgilerimiz yer almaktadır.
                         </p>
                       </div>
                     </div>
@@ -567,6 +566,24 @@ export default function CheckoutPage() {
                       )}
                     </span>
                   </div>
+
+                  {paymentMethod === "havale" && siteConfig.bankAccounts.length > 0 && (
+                    <div className="mt-3 pt-3 border-t border-emerald-200/80 space-y-2">
+                      {siteConfig.bankAccounts.map((acc, idx) => (
+                        <div
+                          key={idx}
+                          className="p-3 rounded-xl bg-white border border-emerald-200 text-xs space-y-1"
+                        >
+                          <div className="font-extrabold text-emerald-800">
+                            ALICI: {acc.accountHolder}
+                          </div>
+                          <div className="font-mono font-black text-slate-900 text-xs sm:text-sm">
+                            IBAN NO: {acc.iban}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Option 2: Kapıda Ödeme */}
