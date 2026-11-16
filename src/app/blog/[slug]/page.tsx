@@ -12,19 +12,18 @@ import {
   Calendar,
   Clock,
   User,
-  ShieldCheck,
-  BatteryCharging,
   Cpu,
-  Layers,
   ChevronRight,
   ArrowLeft,
-  Magnet,
   CheckCircle2,
   HelpCircle,
-  Share2,
   Sparkles,
   ShoppingBag,
+  ExternalLink,
+  Compass,
+  BookOpen,
 } from "lucide-react";
+import AccordionList from "@/components/AccordionList";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -43,15 +42,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const ogImage =
     article.images?.[0]?.src || "/images/blog/makale-001-gorsel-1.svg";
 
+  const cleanTitle = article.seoTitle.replace(/\s*\|\s*LifeGo Mobil\s*$/i, "");
+
   return {
-    title: `${article.seoTitle} | LifeGo Mobil`,
+    title: `${cleanTitle} | LifeGo Mobil`,
     description: article.seoDescription,
     keywords: article.tags,
     alternates: {
       canonical: `https://lifegomobil.com/blog/${article.slug}`,
     },
     openGraph: {
-      title: article.seoTitle,
+      title: cleanTitle,
       description: article.seoDescription,
       url: `https://lifegomobil.com/blog/${article.slug}`,
       type: "article",
@@ -69,7 +70,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: article.seoTitle,
+      title: cleanTitle,
       description: article.seoDescription,
       images: [ogImage],
     },
@@ -339,7 +340,7 @@ export default async function BlogArticleDetailPage({
               </h3>
               <p className="text-xs sm:text-sm text-orange-100 max-w-md">
                 Bu kullanım senaryosuna en uygun modelimiz: Dahili N54 neodimyum mıknatıs,
-                1 yıl M2M SIM kartı, kabin içi ses kayıt modülü ve mobil uygulama dahil!
+                2 yıl M2M SIM kartı, kabin içi ses kayıt modülü ve mobil uygulama dahil!
               </p>
             </div>
             <div className="text-center md:text-right shrink-0 space-y-3">
@@ -435,30 +436,93 @@ export default async function BlogArticleDetailPage({
             </figure>
           )}
 
+          {/* Technical Deep-Dive Accordion Explanations */}
+          {article.accordionDetails && article.accordionDetails.length > 0 && (
+            <div className="space-y-4 pt-6 border-t border-slate-800/80">
+              <h3 className="text-lg font-black text-white flex items-center gap-2">
+                <BookOpen className="w-5 h-5 text-emerald-400" />
+                <span>Teknik Detaylar &amp; Saha Açıklamaları (Akordiyon)</span>
+              </h3>
+              <AccordionList
+                items={article.accordionDetails.map((d, i) => ({
+                  badge: `DETAY 0${i + 1}`,
+                  title: d.title,
+                  content: d.content,
+                }))}
+                theme="dark"
+                defaultOpenIndex={0}
+              />
+            </div>
+          )}
+
           {/* FAQ Accordion Block */}
           <div className="space-y-4 pt-6 border-t border-slate-800/80">
             <h3 className="text-lg font-black text-white flex items-center gap-2">
               <HelpCircle className="w-5 h-5 text-orange-400" />
               <span>Sıkça Sorulan Sorular &amp; Uzman Cevapları</span>
             </h3>
-            <div className="space-y-3">
-              {article.faqs.map((faq, fIdx) => (
-                <div
-                  key={fIdx}
-                  className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-2"
-                >
-                  <h4 className="text-sm font-bold text-white flex items-center gap-2">
-                    <span className="w-5 h-5 rounded-full bg-orange-500/20 text-orange-400 text-xs flex items-center justify-center shrink-0">
-                      S
-                    </span>
-                    {faq.q}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-slate-300 pl-7 leading-relaxed">
-                    {faq.a}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <AccordionList
+              items={article.faqs.map((faq) => ({
+                badge: "SORU",
+                title: faq.q,
+                content: faq.a,
+              }))}
+              theme="dark"
+              defaultOpenIndex={0}
+            />
+          </div>
+
+          {/* Internal & External Authority Links */}
+          <div className="grid md:grid-cols-2 gap-4 pt-6 border-t border-slate-800/80">
+            {article.internalLinks && article.internalLinks.length > 0 && (
+              <div className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
+                <h4 className="text-xs font-black uppercase tracking-wider text-orange-400 flex items-center gap-2">
+                  <Compass className="w-4 h-4" />
+                  <span>İlgili Site İçi Rehberler &amp; Araçlar</span>
+                </h4>
+                <ul className="space-y-2 text-xs">
+                  {article.internalLinks.map((lnk, lIdx) => (
+                    <li key={lIdx}>
+                      <Link
+                        href={lnk.href}
+                        className="text-slate-200 hover:text-orange-400 transition font-semibold underline decoration-slate-700 hover:decoration-orange-400 underline-offset-2"
+                      >
+                        → {lnk.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {article.externalLinks && article.externalLinks.length > 0 && (
+              <div className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
+                <h4 className="text-xs font-black uppercase tracking-wider text-emerald-400 flex items-center gap-2">
+                  <ExternalLink className="w-4 h-4" />
+                  <span>Resmi Standartlar &amp; Dış Referanslar</span>
+                </h4>
+                <ul className="space-y-2.5 text-xs">
+                  {article.externalLinks.map((ext, eIdx) => (
+                    <li key={eIdx}>
+                      <a
+                        href={ext.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-200 hover:text-emerald-300 transition font-semibold flex items-start justify-between gap-2 group"
+                      >
+                        <span>
+                          {ext.title}
+                          <span className="block text-[11px] text-slate-400 font-normal">
+                            {ext.topic} ({ext.domain})
+                          </span>
+                        </span>
+                        <ExternalLink className="w-3.5 h-3.5 text-slate-500 group-hover:text-emerald-400 shrink-0 mt-0.5" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
 
           {/* Tags */}

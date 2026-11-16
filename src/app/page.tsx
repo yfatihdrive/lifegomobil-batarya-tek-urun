@@ -48,6 +48,7 @@ import LiveTelemetryDemo from "@/components/LiveTelemetryDemo";
 import MountingGuide from "@/components/MountingGuide";
 import BatteryCalculator from "@/components/BatteryCalculator";
 import ProductPromoVideo from "@/components/ProductPromoVideo";
+import AccordionList from "@/components/AccordionList";
 
 /**
  * Parses a YouTube URL, iframe code, or 11-char video ID into a clean embed URL.
@@ -1443,27 +1444,102 @@ export default function HomePage() {
             })}
           </div>
 
-          {/* SEO Rich Keyword Content Card */}
-          <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-600 space-y-3 leading-relaxed">
-            <h3 className="text-base sm:text-lg font-black text-slate-900">
-              Mıknatıslı Araç, Motosiklet, Tekne, Nesne Takip Cihazı ve Bataryalı Takip Cihazı Sistemi
-            </h3>
-            <p>
-              <strong>LifeGo Mobil Bataryalı Takip Cihazı</strong>; kablo
-              kesmeye veya akü bağlantısına ihtiyaç duymayan yeni nesil{" "}
-              <strong>mıknatıslı araç, motosiklet, tekne, nesne takip cihazı</strong>{" "}
-              ve{" "}
-              <strong>
-                bataryalı araç, tekne, motosiklet, nesne, kişi takip cihazı ve sistemi
-              </strong>{" "}
-              olarak tasarlanmıştır. Araba, yolcu otobüsü, tır çekicisi,
-              kamyon, marin tekne/yat, motosiklet ve lojistik konteynerlerde{" "}
-              <strong>3.000 mAh, 6.000 mAh, 10.000 mAh ve 20.000 mAh</strong>{" "}
-              olmak üzere 4 farklı batarya modeliyle kesintisiz güvenlik sağlar.
-              Dahili hassas mikrofonu sayesinde araç içine yerleştirildiğinde
-              kabin içi ses kayıt etme imkanı sunar.
-            </p>
+          {/* SEO Rich Keyword Content Card + Interactive Category Accordion */}
+          <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-600 space-y-5 leading-relaxed">
+            <div>
+              <h3 className="text-base sm:text-lg font-black text-slate-900">
+                Kullanım Alanına Göre Mıknatıslı &amp; Bataryalı Takip Cihazı Rehberi
+              </h3>
+              <p className="mt-1.5">
+                <strong>LifeGo Mobil</strong>; kablo kesmeye veya akü bağlantısına
+                ihtiyaç duymayan 4 farklı batarya kapasitesiyle her araç ve
+                varlık türü için özel güvenlik sağlar. Aşağıdaki başlıklardan
+                ihtiyacınıza uygun çözümü inceleyebilirsiniz:
+              </p>
+            </div>
+
+            <AccordionList
+              theme="light"
+              defaultOpenIndex={0}
+              items={[
+                {
+                  badge: "OTOMOBİL",
+                  title: "Mıknatıslı ve Bataryalı Araç Takip Cihazı (Şasi Altı & Kabin İçi)",
+                  content:
+                    "Binek otomobil, SUV ve ticari araçlarda arka şasi traversine N54 mıknatısla 3 saniyede tutunur veya koltuk altı metal kızağa yerleştirilir. Sıfır araç garantisini bozmaz; dahili mikrofonuyla araç içi ses kayıt kontrolü sunar.",
+                },
+                {
+                  badge: "MOTOSİKLET",
+                  title: "Bataryalı ve Mıknatıslı Motosiklet Takip Cihazı (Akü Bitirmez)",
+                  content:
+                    "Motosiklet aküsünden hiç akım çekmez. Sele altı veya yan grenaj içi metal şasiye sabitlenir; park halinde sarsıntı, eğim veya sökülme anında telefonunuza 3 saniyede acil alarm gönderir.",
+                },
+                {
+                  badge: "TEKNE & YAT",
+                  title: "Bataryalı Tekne, Yat ve Dıştan Takma Motor Takip Cihazı (IP67)",
+                  content:
+                    "IEC 60529 IP67 su geçirmez zırhlı gövdesi ile deniz suyu, nem ve yağmurdan etkilenmez. Marina demirleme alanında sanal çit (Geo-Fence) ihlalinde anında konum ve hareket uyarısı verir.",
+                },
+                {
+                  badge: "NESNE & KİŞİ",
+                  title: "Bataryalı Nesne, Konteyner ve Kişi Takip Cihazı",
+                  content:
+                    "Değerli kargo kolileri, jeneratörler, konteynerler ve iş makineleri için 20.000 mAh Ultra modelimiz tek şarjla 2 yıla kadar nöbet tutar. Kompakt 3.000 mAh model ise çanta içi kişi takibi ve yaşlı/çocuk güvenliği için idealdir.",
+                },
+              ]}
+            />
+
+            <div className="pt-2 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs">
+              <div className="flex flex-wrap items-center gap-3 font-bold">
+                <a href="#batarya-hesapla" className="text-orange-600 hover:underline">
+                  → Batarya Süresi Hesapla
+                </a>
+                <a href="#montaj-rehberi" className="text-orange-600 hover:underline">
+                  → Montaj Şemalarını Gör
+                </a>
+                <a href="/blog" className="text-slate-800 hover:text-orange-600 hover:underline">
+                  → Telematik Bilgi Merkezi (400 Rehber)
+                </a>
+              </div>
+              <div className="flex flex-wrap items-center gap-3 text-[11px] text-slate-500">
+                <span>Standartlar:</span>
+                <a
+                  href="https://www.iec.ch/ip-ratings"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-slate-800 underline"
+                >
+                  IEC 60529 (IP67)
+                </a>
+                <a
+                  href="https://www.btk.gov.tr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-slate-800 underline"
+                >
+                  BTK M2M Uyumlu
+                </a>
+              </div>
+            </div>
           </div>
+
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: FAQ_ITEMS.map((f) => ({
+                  "@type": "Question",
+                  name: f.question,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: f.answer,
+                  },
+                })),
+              }),
+            }}
+          />
 
           {/* Final Call-To-Action Card */}
           <div className="mt-10 rounded-3xl bg-[#0B0F17] text-white p-8 sm:p-10 border border-slate-800 text-center space-y-5 shadow-2xl">

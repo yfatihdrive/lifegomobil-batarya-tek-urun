@@ -1,49 +1,42 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" width="1200" height="660">
-    <defs>
-      <linearGradient id="bgGrad_144_1" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#0B1120"/>
-        <stop offset="100%" stop-color="#05070B"/>
-      </linearGradient>
-    </defs>
-    <rect width="1200" height="660" fill="url(#bgGrad_144_1)"/>
-    
-    <rect x="35" y="28" width="1130" height="84" rx="16" fill="#1E293B" stroke="#F59E0B" stroke-opacity="0.45" stroke-width="1.5"/>
-    <circle cx="72" cy="70" r="16" fill="#F59E0B" fill-opacity="0.2" stroke="#F59E0B" stroke-width="2"/>
-    <circle cx="72" cy="70" r="6" fill="#F59E0B"/>
-    <text x="104" y="61" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="19" font-weight="bold">Kütahya Motosiklet, Kamyon ve Nesne Takip Sistemi: Porselen-Sera...</text>
-    <text x="104" y="88" fill="#94A3B8" font-family="Arial, sans-serif" font-size="13">Kategori: Bölgesel Sektör & Moto Analizi  •  Hedef: Motosiklet, Çekici & Bor-Kömür Madeni Kamyonları Ve Binek Araçlar  •  Bölge: Kütahya (İç Ege)  •  Önerilen: LG-300 Mini (3.000 mAh)</text>
-    <rect x="975" y="46" width="165" height="46" rx="10" fill="#F59E0B" fill-opacity="0.18" stroke="#F59E0B" stroke-width="1.5"/>
-    <text x="1057" y="66" text-anchor="middle" fill="#F59E0B" font-family="Arial, sans-serif" font-size="12" font-weight="bold">LIFEGO MOBİL 4G</text>
-    <text x="1057" y="83" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">3.000 mAh • 6.950 ₺</text>
-    
-    
-        <rect x="35" y="132" width="1130" height="495" rx="20" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
-        <text x="65" y="175" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="18" font-weight="bold">4 FARKLI BATARYA KAPASİTESİ VE SAHA DAYANIM KARŞILAŞTIRMASI (mAh &amp; GÜN)</text>
+  <defs>
+    <linearGradient id="g1_144" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="660" fill="url(#g1_144)"/>
+  <rect x="36" y="28" width="1128" height="86" rx="18" fill="#0F172A" stroke="#F97316" stroke-opacity="0.55" stroke-width="2"/>
+  <circle cx="76" cy="71" r="16" fill="#F97316" fill-opacity="0.2" stroke="#F97316" stroke-width="2"/>
+  <circle cx="76" cy="71" r="6" fill="#F97316"/>
+  <text x="108" y="64" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="19" font-weight="bold">Mıknatıslı Motosiklet Takip Cihazı ile Kurye Filo Motorları...</text>
+  <text x="108" y="90" fill="#94A3B8" font-family="Arial, sans-serif" font-size="13">Mıknatıslı Motosiklet Takip Cihazı • Kurye Filo Motorları • İzmir</text>
+  <rect x="955" y="47" width="188" height="48" rx="12" fill="#F97316" fill-opacity="0.18" stroke="#F97316" stroke-width="1.5"/>
+  <text x="1049" y="67" text-anchor="middle" fill="#F97316" font-family="Arial, sans-serif" font-size="12" font-weight="bold">ÖNERİLEN MODEL</text>
+  <text x="1049" y="86" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">LG-300 Mini • 6.950 ₺</text>
 
-        <!-- Bar 1: 3000 mAh -->
-        <text x="65" y="232" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="15" font-weight="bold">LG-300 Mini (3.000 mAh) — 6.950 ₺</text>
-        <rect x="65" y="245" width="1050" height="36" rx="8" fill="#090D16"/>
-        <rect x="65" y="245" width="280" height="36" rx="8" fill="#38BDF8"/>
-        <text x="360" y="268" fill="#38BDF8" font-family="Arial, sans-serif" font-size="14" font-weight="bold">7-10 Gün Aktif / 30 Gün Uyku Modu (Motosiklet, Scooter, Çanta)</text>
+  <rect x="36" y="136" width="1128" height="492" rx="22" fill="#0B1120" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="72" y="182" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="18" font-weight="bold">MİMARİ KARŞILAŞTIRMA: 4 BATARYA KAPASİTESİ &amp; DERİN UYKU PERFORMANSI</text>
+  <text x="72" y="206" fill="#94A3B8" font-family="Arial, sans-serif" font-size="13">Makale #144 Saha Testi • 4G LTE Cat.1 + 66 Kanal GPS/GLONASS + Dahili MEMS Ses Kayıt Mikrofonu</text>
 
-        <!-- Bar 2: 6000 mAh -->
-        <text x="65" y="318" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="15" font-weight="bold">LG-600 Pro (6.000 mAh) — 7.950 ₺</text>
-        <rect x="65" y="331" width="1050" height="36" rx="8" fill="#090D16"/>
-        <rect x="65" y="331" width="510" height="36" rx="8" fill="#10B981"/>
-        <text x="590" y="354" fill="#10B981" font-family="Arial, sans-serif" font-size="14" font-weight="bold">15-21 Gün Aktif / 60 Gün Uyku Modu (Binek Araç, SUV, Kamyonet)</text>
+  
+  <text x="72" y="248" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="14" font-weight="bold">3.000 mAh (LG-300 Mini)</text>
+  <rect x="350" y="230" width="630" height="28" rx="8" fill="#1E293B"/>
+  <rect x="350" y="230" width="180" height="28" rx="8" fill="#38BDF8"/>
+  <text x="998" y="248" fill="#38BDF8" font-family="Arial, sans-serif" font-size="14" font-weight="bold">90 Gün Nöbet</text>
+  <text x="72" y="330" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="14" font-weight="bold">6.000 mAh (LG-600 Pro)</text>
+  <rect x="350" y="312" width="630" height="28" rx="8" fill="#1E293B"/>
+  <rect x="350" y="312" width="310" height="28" rx="8" fill="#10B981"/>
+  <text x="998" y="330" fill="#10B981" font-family="Arial, sans-serif" font-size="14" font-weight="bold">180 Gün Nöbet</text>
+  <text x="72" y="412" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="14" font-weight="bold">10.000 mAh (LG-1000 Max)</text>
+  <rect x="350" y="394" width="630" height="28" rx="8" fill="#1E293B"/>
+  <rect x="350" y="394" width="450" height="28" rx="8" fill="#F59E0B"/>
+  <text x="998" y="412" fill="#F59E0B" font-family="Arial, sans-serif" font-size="14" font-weight="bold">365 Gün Nöbet</text>
+  <text x="72" y="494" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="14" font-weight="bold">20.000 mAh (LG-2000 Ultra)</text>
+  <rect x="350" y="476" width="630" height="28" rx="8" fill="#1E293B"/>
+  <rect x="350" y="476" width="620" height="28" rx="8" fill="#F97316"/>
+  <text x="998" y="494" fill="#F97316" font-family="Arial, sans-serif" font-size="14" font-weight="bold">730 Gün (2 Yıl)</text>
 
-        <!-- Bar 3: 10000 mAh -->
-        <text x="65" y="404" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="15" font-weight="bold">LG-1000 Max (10.000 mAh) — 9.950 ₺</text>
-        <rect x="65" y="417" width="1050" height="36" rx="8" fill="#090D16"/>
-        <rect x="65" y="417" width="760" height="36" rx="8" fill="#F59E0B"/>
-        <text x="840" y="440" fill="#F59E0B" font-family="Arial, sans-serif" font-size="14" font-weight="bold">30-45 Gün Aktif / 120 Gün Uyku (Kamyon, Tekne)</text>
-
-        <!-- Bar 4: 20000 mAh -->
-        <text x="65" y="490" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="15" font-weight="bold">LG-2000 Ultra (20.000 mAh) — 14.950 ₺</text>
-        <rect x="65" y="503" width="1050" height="36" rx="8" fill="#090D16"/>
-        <rect x="65" y="503" width="1020" height="36" rx="8" fill="#F59E0B"/>
-        <text x="85" y="526" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="14" font-weight="bold">60-90 Gün Aktif / 180-365 Gün Uyku Modu (Tır Dorsesi, İhracat Konteyneri, İş Makinesi)</text>
-
-        <text x="65" y="585" fill="#94A3B8" font-family="Arial, sans-serif" font-size="13">* Tüm modellerde N54 mıknatıs, kabin içi ses kayıt mikrofonu, 1 yıl M2M SIM kart ve Türkçe mobil uygulama standarttır.</text>
-        
+  <rect x="72" y="556" width="1056" height="48" rx="12" fill="#0F172A" stroke="#38BDF8" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="600" y="585" text-anchor="middle" fill="#38BDF8" font-family="Arial, sans-serif" font-size="14" font-weight="bold">✓ 0 Kablo Bağlantısı  •  ✓ N54 Mıknatıs (14 kg N54)  •  ✓ IP67 Su Zırhı  •  ✓ 2 Yıl M2M SIM Dahil</text>
 </svg>

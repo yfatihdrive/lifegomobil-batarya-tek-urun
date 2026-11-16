@@ -22,6 +22,23 @@ export interface BlogFaqItem {
   a: string;
 }
 
+export interface BlogAccordionItem {
+  title: string;
+  content: string;
+}
+
+export interface BlogInternalLink {
+  label: string;
+  href: string;
+}
+
+export interface BlogExternalLink {
+  title: string;
+  url: string;
+  domain: string;
+  topic: string;
+}
+
 export interface BlogArticle {
   id: number;
   slug: string;
@@ -45,6 +62,9 @@ export interface BlogArticle {
   sections: BlogSection[];
   telemetryTable: BlogTelemetryRow[];
   faqs: BlogFaqItem[];
+  accordionDetails?: BlogAccordionItem[];
+  internalLinks?: BlogInternalLink[];
+  externalLinks?: BlogExternalLink[];
   tags: string[];
   seoTitle: string;
   seoDescription: string;
@@ -131,8 +151,7 @@ export function getBlogArticleBySlug(
   if (!found) return null;
   if (includePreview) return found;
   if (isArticleLive(found, todayStr)) return found;
-  // Also allow direct slug visits to render with full SEO so no link is ever broken
-  return found;
+  return null;
 }
 
 export function getRelatedBlogArticles(

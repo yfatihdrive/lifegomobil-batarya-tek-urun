@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/yonetim", "/api/"],
+        disallow: ["/yonetim", "/api/", "/siparis-onay"],
       },
     ],
     sitemap: "https://lifegomobil.com/sitemap.xml",
