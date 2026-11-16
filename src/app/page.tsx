@@ -186,10 +186,10 @@ export default function HomePage() {
 
             {/* Sub-features & Rating Bar */}
             <div className="flex flex-col gap-3 text-xs">
-              <div className="flex flex-col gap-2.5 w-full">
-                <div className="w-full flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-950/90 via-emerald-900/60 to-emerald-950/90 border border-emerald-400/60 shadow-lg shadow-emerald-500/15 text-center">
-                  <BatteryCharging className="w-5 h-5 text-emerald-400 shrink-0 animate-pulse" />
-                  <span className="text-sm sm:text-base font-black text-emerald-300 tracking-wide">
+              <div className="flex flex-col gap-2 w-full">
+                <div className="w-full flex items-center justify-center gap-1.5 px-2.5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-950/90 via-emerald-900/60 to-emerald-950/90 border border-emerald-400/60 shadow-lg shadow-emerald-500/15 text-center whitespace-nowrap overflow-hidden">
+                  <BatteryCharging className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 shrink-0 animate-pulse" />
+                  <span className="text-[11.5px] sm:text-sm md:text-base font-black text-emerald-300 tracking-tight">
                     2 YIL BATARYA SÜRESİ{" "}
                     <span className="text-white font-bold">
                       ( Tek şarj ile 2 yıl kullanım )
@@ -198,11 +198,11 @@ export default function HomePage() {
                 </div>
 
                 {/* Full-Width Glowing Animated Feature Banner: Microphone + 2 Years SIM */}
-                <div className="relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-emerald-950/95 via-[#0F2922] to-emerald-950/95 border-2 border-emerald-400/80 px-4 py-3 text-center animate-emerald-glow">
+                <div className="relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-emerald-950/95 via-[#0F2922] to-emerald-950/95 border-2 border-emerald-400/80 px-2.5 py-2.5 text-center animate-emerald-glow">
                   <div className="pointer-events-none absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-emerald-300/20 to-transparent animate-light-sweep" />
-                  <div className="relative z-10 flex items-center justify-center gap-2 flex-wrap">
-                    <Mic className="w-5 h-5 text-amber-300 shrink-0 animate-bounce" />
-                    <span className="text-base sm:text-xl md:text-2xl font-black tracking-tight animate-emerald-neon-text">
+                  <div className="relative z-10 flex items-center justify-center gap-1.5 whitespace-nowrap">
+                    <Mic className="w-4 h-4 sm:w-5 sm:h-5 text-amber-300 shrink-0 animate-bounce" />
+                    <span className="text-[11.5px] sm:text-base md:text-xl font-black tracking-tight animate-emerald-neon-text">
                       • Dahili Mikrofon (Ses Kayıt) + 2 Yıllık M2M SIM Dahil
                     </span>
                   </div>
