@@ -138,7 +138,7 @@ export default function Footer() {
                     href="/blog"
                     className="hover:text-orange-400 transition text-white font-bold"
                   >
-                    Telematik Blogu &amp; 300 Rehber
+                    Life GO Mobil Blogu &amp; 300 Rehber
                   </Link>
                 </li>
               </ul>
@@ -233,7 +233,7 @@ export default function Footer() {
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
             <p>
               © {new Date().getFullYear()} {siteConfig.brandName} — Tüm Hakları
-              Saklıdır. BTK Onaylı M2M Telematik Altyapısı.
+              Saklıdır. BTK Onaylı M2M Life GO Mobil Altyapısı.
             </p>
             <div className="flex items-center gap-4">
               <span className="inline-flex items-center gap-1.5 text-slate-400">

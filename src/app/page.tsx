@@ -1498,7 +1498,7 @@ export default function HomePage() {
                   → Montaj Şemalarını Gör
                 </a>
                 <a href="/blog" className="text-slate-800 hover:text-orange-600 hover:underline">
-                  → Telematik Bilgi Merkezi (400 Rehber)
+                  → Life GO Mobil Bilgi Merkezi (400 Rehber)
                 </a>
               </div>
               <div className="flex flex-wrap items-center gap-3 text-[11px] text-slate-500">

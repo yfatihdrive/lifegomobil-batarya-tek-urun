@@ -107,7 +107,7 @@ export default async function BlogArticleDetailPage({
     },
     publisher: {
       "@type": "Organization",
-      name: "LifeGo Mobil Telematik Sistemleri",
+      name: "Life GO Mobil",
       url: "https://lifegomobil.com",
       logo: {
         "@type": "ImageObject",
@@ -377,7 +377,7 @@ export default async function BlogArticleDetailPage({
           <div className="space-y-4">
             <h3 className="text-lg font-black text-white flex items-center gap-2">
               <Cpu className="w-5 h-5 text-orange-400" />
-              <span>Teknik Telematik Parametre Tablosu</span>
+              <span>Teknik Life GO Mobil Parametre Tablosu</span>
             </h3>
             <div className="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950">
               <table className="w-full text-left text-xs sm:text-sm">
@@ -566,7 +566,7 @@ export default async function BlogArticleDetailPage({
           {related.length > 0 && (
             <div className="space-y-4 pt-10 border-t border-slate-800">
               <h3 className="text-lg font-black text-white">
-                Benzer Telematik &amp; Takip Makaleleri
+                Benzer Life GO Mobil &amp; Takip Makaleleri
               </h3>
               <div className="grid sm:grid-cols-3 gap-4">
                 {related.map((rel) => (

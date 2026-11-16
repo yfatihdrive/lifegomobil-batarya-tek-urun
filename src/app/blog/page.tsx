@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Telematik & Bataryalı Takip Rehberi (400 Makale) | LifeGo Mobil",
+  title: "Life GO Mobil & Bataryalı Takip Rehberi (400 Makale) | LifeGo Mobil",
   description:
     "Mıknatıslı araç takip cihazı, bataryalı araç, motosiklet, tekne, nesne ve kişi takip cihazı rehberleri. 400 özgün teknik analiz 01.12.2026 tarihinde yayında.",
   keywords: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     canonical: "https://lifegomobil.com/blog",
   },
   openGraph: {
-    title: "Telematik & Bataryalı Takip Sistemleri Bilgi Merkezi | LifeGo Mobil",
+    title: "Life GO Mobil & Bataryalı Takip Sistemleri Bilgi Merkezi | LifeGo Mobil",
     description:
       "Mıknatıslı ve bataryalı GPS takip cihazları, N54 mıknatıs montajı, IP67 su geçirmezlik ve 2 yıllık M2M SIM rehberleri.",
     url: "https://lifegomobil.com/blog",
@@ -126,7 +126,7 @@ export default function BlogIndexPage() {
   const collectionSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "LifeGo Mobil Telematik & Bataryalı Takip Rehberi",
+    name: "Life GO Mobil & Bataryalı Takip Rehberi",
     description:
       "Mıknatıslı ve bataryalı araç, motosiklet, tekne, nesne ve kişi takip cihazları hakkında 400 teknik mühendislik makalesi.",
     url: "https://lifegomobil.com/blog",
@@ -169,14 +169,14 @@ export default function BlogIndexPage() {
               </Link>
               <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
               <span className="text-orange-400 font-bold">
-                Blog &amp; Telematik Rehberi
+                Blog &amp; Life GO Mobil Rehberi
               </span>
             </nav>
 
             <div className="max-w-3xl space-y-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/15 border border-orange-500/30 text-orange-400 text-xs font-bold uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>Telematik &amp; Takip Sistemleri Bilgi Merkezi</span>
+                <span>Life GO Mobil &amp; Takip Sistemleri Bilgi Merkezi</span>
               </div>
 
               <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
@@ -190,7 +190,7 @@ export default function BlogIndexPage() {
                 Araba, motosiklet, çekici, otobüs, tekne, konteyner, değerli
                 nesne ve kişi takibi için 3.000 mAh&apos;den 20.000 mAh&apos;e
                 kadar batarya süresi analizleri, N54 neodimyum mıknatıs montajı
-                ve 2 yıllık M2M SIM saha telematik verileri.
+                ve 2 yıllık M2M SIM saha Life GO Mobil verileri.
               </p>
             </div>
           </div>
