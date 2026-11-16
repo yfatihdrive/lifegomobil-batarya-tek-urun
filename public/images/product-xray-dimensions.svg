@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="60%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#070B12"/>
+    </radialGradient>
+    <linearGradient id="caseBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="40%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0B0F17"/>
+    </linearGradient>
+    <linearGradient id="caseFace" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#273244"/>
+      <stop offset="100%" stop-color="#131B28"/>
+    </linearGradient>
+    <linearGradient id="orangeAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+    <linearGradient id="emeraldAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.7" stroke-opacity="0.35"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="900" fill="url(#bgGlow)"/>
+  <rect width="1200" height="900" fill="url(#techGrid)"/>
+
+  <!-- Header Badge -->
+  <g transform="translate(60, 48)">
+    <rect width="260" height="36" rx="8" fill="#F97316" fill-opacity="0.15" stroke="#F97316" stroke-opacity="0.4"/>
+    <circle cx="20" cy="18" r="5" fill="#F97316"/>
+    <text x="36" y="23" fill="#FDBA74" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5">MÜHENDİSLİK ŞEMASI &amp; BOYUTLAR</text>
+    <text x="0" y="72" fill="#F8FAFC" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="800">LG-500 Pro Donanım Mimarisi</text>
+    <text x="0" y="102" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="500">IP67 Zırhlı ABS/PC Gövde • N54 Neodimyum Manyetik Taban • 6.000 mAh Li-Po Hücre</text>
+  </g>
+
+  <!-- Center 3D Isometric Device Blueprint -->
+  <g transform="translate(350, 230)">
+    <!-- Magnetic Field Rings at Bottom -->
+    <ellipse cx="250" cy="390" rx="220" ry="42" fill="none" stroke="#F97316" stroke-width="1.5" stroke-dasharray="8 6" stroke-opacity="0.5"/>
+    <ellipse cx="250" cy="390" rx="170" ry="30" fill="#F97316" fill-opacity="0.06" stroke="#F97316" stroke-width="1.5" stroke-opacity="0.8"/>
+
+    <!-- Device Outer Chassis -->
+    <rect x="60" y="40" width="380" height="310" rx="34" fill="url(#caseBody)" stroke="#475569" stroke-width="2.5"/>
+    <!-- Inner Recessed Faceplate -->
+    <rect x="92" y="68" width="316" height="254" rx="22" fill="url(#caseFace)" stroke="#334155" stroke-width="1.5"/>
+
+    <!-- Geometric L-shaped Grooves (Matching Real PT-500 / LG-500 Hardware) -->
+    <path d="M 130 105 L 365 105 L 365 215" fill="none" stroke="#64748B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 130 105 L 365 105 L 365 215" fill="none" stroke="#0F172A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <path d="M 365 285 L 130 285 L 130 175" fill="none" stroke="#64748B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 365 285 L 130 285 L 130 175" fill="none" stroke="#0F172A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Status / Sensor Dots -->
+    <circle cx="235" cy="272" r="7" fill="#0F172A" stroke="#10B981" stroke-width="2.5"/>
+    <circle cx="235" cy="272" r="3" fill="#10B981"/>
+    <circle cx="268" cy="272" r="7" fill="#0F172A" stroke="#38BDF8" stroke-width="2.5"/>
+    <circle cx="268" cy="272" r="3" fill="#38BDF8"/>
+
+    <!-- Left Side Waterproof Rubber Type-C Flap & Anti-Tamper Button -->
+    <rect x="48" y="115" width="22" height="125" rx="7" fill="#1E293B" stroke="#64748B" stroke-width="2"/>
+    <rect x="54" y="142" width="10" height="36" rx="4" fill="#0F172A" stroke="#F97316" stroke-width="1.5"/>
+    <!-- Anti-tamper optical/mechanical trigger -->
+    <rect x="50" y="255" width="18" height="32" rx="5" fill="#F97316" stroke="#FDBA74" stroke-width="1.5"/>
+
+    <!-- Internal Cutaway X-Ray Overlay (Subtle) -->
+    <rect x="160" y="130" width="185" height="110" rx="10" fill="#0F172A" fill-opacity="0.65" stroke="#38BDF8" stroke-width="1.2" stroke-dasharray="5 4"/>
+    <text x="252" y="168" text-anchor="middle" fill="#38BDF8" font-family="monospace" font-size="14" font-weight="700">6.000 mAh Li-Po</text>
+    <text x="252" y="190" text-anchor="middle" fill="#94A3B8" font-family="monospace" font-size="12">3.7V / 22.2Wh Yüksek Yoğunluk</text>
+    <text x="252" y="212" text-anchor="middle" fill="#10B981" font-family="monospace" font-size="12" font-weight="700">4G LTE Cat.1 + MTK GNSS</text>
+
+    <!-- Dimension Arrows: Width (83.5 mm) -->
+    <line x1="60" y1="12" x2="440" y2="12" stroke="#F8FAFC" stroke-width="1.5"/>
+    <line x1="60" y1="4" x2="60" y2="20" stroke="#F8FAFC" stroke-width="2"/>
+    <line x1="440" y1="4" x2="440" y2="20" stroke="#F8FAFC" stroke-width="2"/>
+    <rect x="180" y="-4" width="140" height="28" rx="6" fill="#0F172A" stroke="#475569"/>
+    <text x="250" y="15" text-anchor="middle" fill="#F8FAFC" font-family="monospace" font-size="14" font-weight="700">83.5 mm (Boy)</text>
+
+    <!-- Dimension Arrows: Height (56.5 mm) -->
+    <line x1="472" y1="40" x2="472" y2="350" stroke="#F8FAFC" stroke-width="1.5"/>
+    <line x1="464" y1="40" x2="480" y2="40" stroke="#F8FAFC" stroke-width="2"/>
+    <line x1="464" y1="350" x2="480" y2="350" stroke="#F8FAFC" stroke-width="2"/>
+    <rect x="486" y="178" width="135" height="32" rx="6" fill="#0F172A" stroke="#475569"/>
+    <text x="553" y="199" text-anchor="middle" fill="#F8FAFC" font-family="monospace" font-size="13" font-weight="700">56.5 mm (En)</text>
+  </g>
+
+  <!-- Left Callout 1: Waterproof Type-C -->
+  <g transform="translate(55, 345)">
+    <rect width="265" height="92" rx="14" fill="#1E293B" fill-opacity="0.9" stroke="#334155" stroke-width="1.5"/>
+    <rect x="14" y="16" width="8" height="60" rx="4" fill="#38BDF8"/>
+    <text x="34" y="36" fill="#F8FAFC" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700">IP67 Silikon Type-C Kapak</text>
+    <text x="34" y="58" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="12.5">Su, çamur ve toza karşı tam</text>
+    <text x="34" y="75" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="12.5">sızdırmaz hızlı şarj portu</text>
+    <line x1="265" y1="46" x2="402" y2="46" stroke="#38BDF8" stroke-width="1.8" stroke-dasharray="4 4"/>
+    <circle cx="402" cy="46" r="5" fill="#38BDF8"/>
+  </g>
+
+  <!-- Left Callout 2: Anti-Tamper Sensor -->
+  <g transform="translate(55, 475)">
+    <rect width="265" height="96" rx="14" fill="#1E293B" fill-opacity="0.9" stroke="#F97316" stroke-width="1.5"/>
+    <rect x="14" y="16" width="8" height="64" rx="4" fill="#F97316"/>
+    <text x="34" y="36" fill="#F8FAFC" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700">Anti-Tamper Sökülme Sensörü</text>
+    <text x="34" y="58" fill="#FDBA74" font-family="Inter, system-ui, sans-serif" font-size="12.5">Metal yüzeyden ayrıldığı saniyede</text>
+    <text x="34" y="75" fill="#FDBA74" font-family="Inter, system-ui, sans-serif" font-size="12.5">telefona acil bildirim gönderir</text>
+    <line x1="265" y1="30" x2="402" y2="26" stroke="#F97316" stroke-width="1.8" stroke-dasharray="4 4"/>
+    <circle cx="402" cy="26" r="5" fill="#F97316"/>
+  </g>
+
+  <!-- Right Callout 1: N54 Magnet -->
+  <g transform="translate(865, 535)">
+    <rect width="280" height="96" rx="14" fill="#1E293B" fill-opacity="0.9" stroke="#F97316" stroke-width="1.5"/>
+    <rect x="14" y="16" width="8" height="64" rx="4" fill="#F97316"/>
+    <text x="34" y="36" fill="#F8FAFC" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700">N54 Neodimyum Mıknatıs</text>
+    <text x="34" y="58" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="12.5">~18.4 kg çekme kuvveti ile şasiye</text>
+    <text x="34" y="75" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="12.5">delmeden, vidalamadan kilitlenir</text>
+    <line x1="0" y1="55" x2="-110" y2="80" stroke="#F97316" stroke-width="1.8" stroke-dasharray="4 4"/>
+    <circle cx="-110" cy="80" r="5" fill="#F97316"/>
+  </g>
+
+  <!-- Bottom Spec Strip -->
+  <g transform="translate(60, 745)">
+    <rect width="1080" height="104" rx="18" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+    <g transform="translate(36, 26)">
+      <text x="0" y="18" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">KALINLIK &amp; AĞIRLIK</text>
+      <text x="0" y="46" fill="#F8FAFC" font-family="monospace" font-size="22" font-weight="800">28.5 mm / 181g</text>
+    </g>
+    <line x1="265" y1="20" x2="265" y2="84" stroke="#334155"/>
+    <g transform="translate(295, 26)">
+      <text x="0" y="18" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">KONUM HASSASİYETİ</text>
+      <text x="0" y="46" fill="#10B981" font-family="monospace" font-size="22" font-weight="800">&lt; 3 Metre (-166dBm)</text>
+    </g>
+    <line x1="560" y1="20" x2="560" y2="84" stroke="#334155"/>
+    <g transform="translate(590, 26)">
+      <text x="0" y="18" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">ÇALIŞMA SICAKLIĞI</text>
+      <text x="0" y="46" fill="#38BDF8" font-family="monospace" font-size="22" font-weight="800">-20°C ~ +70°C</text>
+    </g>
+    <line x1="825" y1="20" x2="825" y2="84" stroke="#334155"/>
+    <g transform="translate(855, 26)">
+      <text x="0" y="18" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">SU &amp; TOZ ZIRHI</text>
+      <text x="0" y="46" fill="#F97316" font-family="monospace" font-size="22" font-weight="800">IP67 Sertifikalı</text>
+    </g>
+  </g>
+</svg>

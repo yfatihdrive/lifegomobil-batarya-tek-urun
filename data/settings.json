@@ -1,0 +1,27 @@
+{
+  "brandName": "LifeGo Mobil",
+  "brandTagline": "Kablosuz Telematik & Araç Güvenlik Sistemleri",
+  "productModel": "LG-500 Pro",
+  "productFullName": "LifeGo LG-500 Pro Kablosuz Mıknatıslı 4G GPS Takip Cihazı",
+  "phoneDisplay": "+90 216 825 10 87",
+  "phoneRaw": "+902168251087",
+  "whatsappRaw": "902168251087",
+  "whatsappDisplay": "+90 216 825 10 87",
+  "email": "destek@lifegomobil.com",
+  "address": "Teknopark Bulvarı No: 1/4C, Kurtköy / Pendik — İstanbul",
+  "workingHours": "Pazartesi - Cumartesi: 09:00 - 20:00 (7/24 WhatsApp Teknik Destek)",
+  "bankTransferDiscountPercent": 5,
+  "codFee": 0,
+  "bankAccounts": [
+    {
+      "bankName": "Garanti BBVA",
+      "accountHolder": "LİFEGO MOBİL TEKNOLOJİ VE TELEMATİK SİSTEMLERİ",
+      "iban": "TR42 0006 2000 4120 0006 2984 10"
+    },
+    {
+      "bankName": "Ziraat Bankası",
+      "accountHolder": "LİFEGO MOBİL TEKNOLOJİ VE TELEMATİK SİSTEMLERİ",
+      "iban": "TR89 0001 0021 4589 6321 4500 01"
+    }
+  ]
+}

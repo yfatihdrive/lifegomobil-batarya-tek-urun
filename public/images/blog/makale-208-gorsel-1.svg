@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" width="1200" height="660">
+    <defs>
+      <linearGradient id="bgGrad_208_1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#120D1D"/>
+        <stop offset="100%" stop-color="#05070B"/>
+      </linearGradient>
+    </defs>
+    <rect width="1200" height="660" fill="url(#bgGrad_208_1)"/>
+    
+    <rect x="35" y="28" width="1130" height="84" rx="16" fill="#1E1630" stroke="#EC4899" stroke-opacity="0.45" stroke-width="1.5"/>
+    <circle cx="72" cy="70" r="16" fill="#EC4899" fill-opacity="0.2" stroke="#EC4899" stroke-width="2"/>
+    <circle cx="72" cy="70" r="6" fill="#EC4899"/>
+    <text x="104" y="61" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="19" font-weight="bold">SUV ve 4x4 Pickup Araçlarda Şasi Kirişi Üzerine Mıknatıslı GPS Y...</text>
+    <text x="104" y="88" fill="#94A3B8" font-family="Arial, sans-serif" font-size="13">Kategori: Donanım & Mıknatıs Mühendisliği  •  Hedef: SUV & 4x4 Pickup  •  Bölge: Türkiye Geneli & Iğdır Sahası  •  Önerilen: LG-1000 Max (10.000 mAh)</text>
+    <rect x="975" y="46" width="165" height="46" rx="10" fill="#EC4899" fill-opacity="0.18" stroke="#EC4899" stroke-width="1.5"/>
+    <text x="1057" y="66" text-anchor="middle" fill="#EC4899" font-family="Arial, sans-serif" font-size="12" font-weight="bold">LIFEGO MOBİL 4G</text>
+    <text x="1057" y="83" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">10.000 mAh • 9.950 ₺</text>
+    
+    
+        <rect x="35" y="132" width="1130" height="495" rx="20" fill="#1E1630" stroke="#334155" stroke-width="1.5"/>
+        <text x="65" y="175" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="18" font-weight="bold">4 FARKLI BATARYA KAPASİTESİ VE SAHA DAYANIM KARŞILAŞTIRMASI (mAh &amp; GÜN)</text>
+
+        <!-- Bar 1: 3000 mAh -->
+        <text x="65" y="232" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="15" font-weight="bold">LG-300 Mini (3.000 mAh) — 6.950 ₺</text>
+        <rect x="65" y="245" width="1050" height="36" rx="8" fill="#090D16"/>
+        <rect x="65" y="245" width="280" height="36" rx="8" fill="#38BDF8"/>
+        <text x="360" y="268" fill="#38BDF8" font-family="Arial, sans-serif" font-size="14" font-weight="bold">7-10 Gün Aktif / 30 Gün Uyku Modu (Motosiklet, Scooter, Çanta)</text>
+
+        <!-- Bar 2: 6000 mAh -->
+        <text x="65" y="318" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="15" font-weight="bold">LG-600 Pro (6.000 mAh) — 7.950 ₺</text>
+        <rect x="65" y="331" width="1050" height="36" rx="8" fill="#090D16"/>
+        <rect x="65" y="331" width="510" height="36" rx="8" fill="#10B981"/>
+        <text x="590" y="354" fill="#10B981" font-family="Arial, sans-serif" font-size="14" font-weight="bold">15-21 Gün Aktif / 60 Gün Uyku Modu (Binek Araç, SUV, Kamyonet)</text>
+
+        <!-- Bar 3: 10000 mAh -->
+        <text x="65" y="404" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="15" font-weight="bold">LG-1000 Max (10.000 mAh) — 9.950 ₺</text>
+        <rect x="65" y="417" width="1050" height="36" rx="8" fill="#090D16"/>
+        <rect x="65" y="417" width="760" height="36" rx="8" fill="#F59E0B"/>
+        <text x="840" y="440" fill="#F59E0B" font-family="Arial, sans-serif" font-size="14" font-weight="bold">30-45 Gün Aktif / 120 Gün Uyku (Kamyon, Tekne)</text>
+
+        <!-- Bar 4: 20000 mAh -->
+        <text x="65" y="490" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="15" font-weight="bold">LG-2000 Ultra (20.000 mAh) — 14.950 ₺</text>
+        <rect x="65" y="503" width="1050" height="36" rx="8" fill="#090D16"/>
+        <rect x="65" y="503" width="1020" height="36" rx="8" fill="#EC4899"/>
+        <text x="85" y="526" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="14" font-weight="bold">60-90 Gün Aktif / 180-365 Gün Uyku Modu (Tır Dorsesi, İhracat Konteyneri, İş Makinesi)</text>
+
+        <text x="65" y="585" fill="#94A3B8" font-family="Arial, sans-serif" font-size="13">* Tüm modellerde N54 mıknatıs, kabin içi ses kayıt mikrofonu, 1 yıl M2M SIM kart ve Türkçe mobil uygulama standarttır.</text>
+        
+</svg>

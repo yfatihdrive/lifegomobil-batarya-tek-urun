@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" width="1200" height="660">
+    <defs>
+      <linearGradient id="bgGrad_199_1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#070B14"/>
+        <stop offset="100%" stop-color="#05070B"/>
+      </linearGradient>
+    </defs>
+    <rect width="1200" height="660" fill="url(#bgGrad_199_1)"/>
+    
+    <rect x="35" y="28" width="1130" height="84" rx="16" fill="#111827" stroke="#EF4444" stroke-opacity="0.45" stroke-width="1.5"/>
+    <circle cx="72" cy="70" r="16" fill="#EF4444" fill-opacity="0.2" stroke="#EF4444" stroke-width="2"/>
+    <circle cx="72" cy="70" r="6" fill="#EF4444"/>
+    <text x="104" y="61" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="19" font-weight="bold">Elektrikli Scooter, E-Bike ve Üç Tekerlekli Elektrikli Mopedlerd...</text>
+    <text x="104" y="88" fill="#94A3B8" font-family="Arial, sans-serif" font-size="13">Kategori: Motosiklet Güvenliği  •  Hedef: Elektrikli Bisiklet & Moped  •  Bölge: Türkiye Geneli & Muş Sahası  •  Önerilen: LG-300 Mini (3.000 mAh)</text>
+    <rect x="975" y="46" width="165" height="46" rx="10" fill="#EF4444" fill-opacity="0.18" stroke="#EF4444" stroke-width="1.5"/>
+    <text x="1057" y="66" text-anchor="middle" fill="#EF4444" font-family="Arial, sans-serif" font-size="12" font-weight="bold">LIFEGO MOBİL 4G</text>
+    <text x="1057" y="83" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">3.000 mAh • 6.950 ₺</text>
+    
+    
+        <rect x="35" y="132" width="1130" height="495" rx="20" fill="#111827" stroke="#334155" stroke-width="1.5"/>
+        <text x="65" y="175" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="18" font-weight="bold">KABLOLU KLASİK TAKİP SİSTEMLERİ vs. LIFEGO MOBİL BATARYALI MIKNATISLI SİSTEM</text>
+
+        <rect x="65" y="200" width="520" height="395" rx="16" fill="#090D16" stroke="#22C55E" stroke-width="1.5"/>
+        <text x="95" y="238" fill="#22C55E" font-family="Arial, sans-serif" font-size="17" font-weight="bold">✓ LIFEGO MOBİL (LG-300 Mini - 3.000 mAh)</text>
+        <text x="95" y="278" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="14">• Kurulum: 3 Saniyede N54 Mıknatısla Tak-Çalıştır</text>
+        <text x="95" y="315" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="14">• Araç Aküsü: Kendi Bataryasıyla Çalışır, Aküyü Bitirmez</text>
+        <text x="95" y="352" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="14">• Garanti Etkisi: Kablo Kesilmediği İçin Garantiyi Bozmaz</text>
+        <text x="95" y="389" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="14">• Taşınabilirlik: Araçtan Motora / Tekneye Anında Aktarılır</text>
+        <text x="95" y="426" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="14">• Ses Özelliği: Dahili Mikrofon ile Kabin İçi Ses Kayıt Etme</text>
+        <text x="95" y="463" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="14">• Sözleşme: Taahhüt Yok, 1 Yıl M2M SIM ve Sunucu Dahil</text>
+        <text x="95" y="505" fill="#22C55E" font-family="Arial, sans-serif" font-size="16" font-weight="bold">• Tek Seferlik Net Fiyat: 6.950 ₺</text>
+
+        <rect x="615" y="200" width="520" height="395" rx="16" fill="#090D16" stroke="#EF4444" stroke-opacity="0.5" stroke-width="1.5"/>
+        <text x="645" y="238" fill="#EF4444" font-family="Arial, sans-serif" font-size="17" font-weight="bold">✗ KLASİK KABLOLU ARAÇ TAKİP CİHAZLARI</text>
+        <text x="645" y="278" fill="#94A3B8" font-family="Arial, sans-serif" font-size="14">• Kurulum: Oto Elektrikçi Randevusu ve Konsol Sökümü</text>
+        <text x="645" y="315" fill="#94A3B8" font-family="Arial, sans-serif" font-size="14">• Araç Aküsü: Sürekli Aküden Güç Çeker (Motosiklette Riskli)</text>
+        <text x="645" y="352" fill="#94A3B8" font-family="Arial, sans-serif" font-size="14">• Garanti Etkisi: Elektrik Tesisatı Müdahalesi Riski</text>
+        <text x="645" y="389" fill="#94A3B8" font-family="Arial, sans-serif" font-size="14">• Taşınabilirlik: Sabittir, Başka Araca Kolayca Alınamaz</text>
+        <text x="645" y="426" fill="#94A3B8" font-family="Arial, sans-serif" font-size="14">• Ses Özelliği: Çoğu Standart Filo Cihazında Bulunmaz</text>
+        <text x="645" y="463" fill="#94A3B8" font-family="Arial, sans-serif" font-size="14">• Sözleşme: 24-36 Ay Cayma Bedelli Abonelik Taahhütleri</text>
+        <text x="645" y="505" fill="#EF4444" font-family="Arial, sans-serif" font-size="15" font-weight="bold">• Ekstra Montaj + Sökme/Takma Servis Ücretleri</text>
+        
+</svg>
