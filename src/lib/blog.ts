@@ -54,6 +54,7 @@ export interface BlogArticle {
   author: string;
   authorRole: string;
   scheduledAt: string; // YYYY-MM-DD
+  publishTime?: string; // HH:mm (e.g. "22:00" TR time)
   status: "published" | "scheduled" | "draft";
   wordCount: number;
   readTimeMinutes: number;
@@ -72,21 +73,42 @@ export interface BlogArticle {
 
 const BLOG_DATA_FILE = path.join(process.cwd(), "data", "blog-articles.json");
 
-export function getTodayDateString(): string {
+export function getTurkeyNow(): { dateStr: string; timeStr: string } {
   const now = new Date();
-  const year = now.getFullYear();
-  const month = String(now.getMonth() + 1).padStart(2, "0");
-  const day = String(now.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/Istanbul",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).formatToParts(now);
+
+  const get = (t: string) => parts.find((p) => p.type === t)?.value || "00";
+  return {
+    dateStr: `${get("year")}-${get("month")}-${get("day")}`,
+    timeStr: `${get("hour")}:${get("minute")}`,
+  };
+}
+
+export function getTodayDateString(): string {
+  return getTurkeyNow().dateStr;
 }
 
 export function isArticleLive(
-  article: Pick<BlogArticle, "status" | "scheduledAt">,
-  todayStr: string = getTodayDateString()
+  article: Pick<BlogArticle, "status" | "scheduledAt"> & { publishTime?: string },
+  todayStr?: string
 ): boolean {
   if (article.status === "published") return true;
-  if (article.status === "scheduled" && article.scheduledAt <= todayStr) {
-    return true;
+  if (article.status === "scheduled") {
+    const trNow = getTurkeyNow();
+    const compareDate = todayStr || trNow.dateStr;
+    if (article.scheduledAt < compareDate) return true;
+    if (article.scheduledAt === compareDate) {
+      const targetTime = article.publishTime || "22:00";
+      return trNow.timeStr >= targetTime;
+    }
   }
   return false;
 }

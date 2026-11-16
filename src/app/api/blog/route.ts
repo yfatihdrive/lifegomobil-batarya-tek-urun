@@ -174,6 +174,7 @@ export async function PATCH(req: NextRequest) {
           ...a,
           status: "scheduled" as const,
           scheduledAt: `${y}-${m}-${day}`,
+          publishTime: "22:00",
         };
       });
       writeAllBlogArticles(updated);

@@ -176,7 +176,7 @@ export default function BlogIndexPage() {
             <div className="max-w-3xl space-y-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/15 border border-orange-500/30 text-orange-400 text-xs font-bold uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>400 Özgün Teknik Rehber • 01.12.2026 Yayın Takvimi</span>
+                <span>Telematik &amp; Takip Sistemleri Bilgi Merkezi</span>
               </div>
 
               <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
@@ -198,42 +198,7 @@ export default function BlogIndexPage() {
 
         {/* Main Content Area */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 space-y-14">
-          {liveArticles.length === 0 ? (
-            <div className="p-8 sm:p-12 rounded-3xl bg-slate-900/70 border border-orange-500/30 text-center space-y-4 max-w-3xl mx-auto shadow-2xl">
-              <div className="w-14 h-14 rounded-2xl bg-orange-500/20 text-orange-400 border border-orange-500/30 flex items-center justify-center mx-auto">
-                <Calendar className="w-7 h-7" />
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-black">
-                <Clock className="w-3.5 h-3.5" />
-                <span>PLANLANMIŞ YAYIN TARİHİ: 01.12.2026</span>
-              </div>
-              <h2 className="text-xl sm:text-2xl font-black text-white">
-                400 Adet %100 Özgün Telematik Makalesi Yayına Hazırlanıyor
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Mühendislik ekibimiz tarafından hazırlanan <strong>400</strong>{" "}
-                adet birbirinden bağımsız teknik inceleme, batarya testi ve
-                bölgesel saha rehberi <strong>01.12.2026</strong> tarihinde
-                otomatik olarak yayına alınacaktır. Aşağıdaki interaktif ürün
-                rehberinden cihazlarımızı hemen inceleyebilirsiniz.
-              </p>
-              <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
-                <Link
-                  href="/#urun-secimi"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-black text-xs transition"
-                >
-                  <span>4 Bataryalı Modeli İncele</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/#batarya-hesapla"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold text-xs transition"
-                >
-                  <span>Batarya Süresi Hesapla</span>
-                </Link>
-              </div>
-            </div>
-          ) : (
+          {liveArticles.length > 0 && (
             <div className="space-y-6">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <h2 className="text-xl font-black text-white flex items-center gap-2">
