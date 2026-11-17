@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
+import { isAdminAuthenticated } from "@/lib/adminAuth";
 
 export interface StoredOrder {
   orderCode: string;
@@ -75,6 +76,10 @@ export async function GET(request: Request) {
     return NextResponse.json({ orders: matches });
   }
 
+  if (!(await isAdminAuthenticated())) {
+    return NextResponse.json({ error: "Yetkisiz erişim." }, { status: 401 });
+  }
+
   return NextResponse.json({ orders });
 }
 
@@ -112,6 +117,9 @@ export async function POST(request: Request) {
 }
 
 export async function PATCH(request: Request) {
+  if (!(await isAdminAuthenticated())) {
+    return NextResponse.json({ error: "Yetkisiz erişim." }, { status: 401 });
+  }
   try {
     const { orderCode, status } = await request.json();
     const orders = ensureOrdersFile();

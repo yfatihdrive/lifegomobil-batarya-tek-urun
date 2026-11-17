@@ -177,14 +177,6 @@ export default function Footer() {
                     KVKK &amp; Gizlilik Politikası
                   </button>
                 </li>
-                <li>
-                  <Link
-                    href="/yonetim"
-                    className="hover:text-slate-200 transition text-slate-500"
-                  >
-                    Bayi / Yönetici Girişi
-                  </Link>
-                </li>
               </ul>
             </div>
 

@@ -25,6 +25,8 @@ import {
   ChevronRight,
   TrendingUp,
   SlidersHorizontal,
+  Lock,
+  LogOut,
 } from "lucide-react";
 import { useCart, formatTRY } from "@/context/CartContext";
 import type { StoredOrder } from "@/app/api/orders/route";
@@ -65,6 +67,15 @@ interface BlogStats {
 export default function AdminPanelPage() {
   const { siteConfig, updateSiteConfig, localOrders, buildWhatsAppOrderUrl } =
     useCart();
+
+  // Auth State
+  const [authState, setAuthState] = useState<
+    "checking" | "unauthenticated" | "authenticated"
+  >("checking");
+  const [loginUser, setLoginUser] = useState("");
+  const [loginPass, setLoginPass] = useState("");
+  const [loginError, setLoginError] = useState<string | null>(null);
+  const [loginLoading, setLoginLoading] = useState(false);
 
   // Active Tab: "orders" | "blog" | "settings"
   const [activeTab, setActiveTab] = useState<"orders" | "blog" | "settings">("blog");
@@ -131,9 +142,50 @@ export default function AdminPanelPage() {
   };
 
   useEffect(() => {
+    fetch("/api/admin-auth")
+      .then((r) => (r.ok ? r.json() : { authenticated: false }))
+      .then((data) => {
+        setAuthState(data?.authenticated ? "authenticated" : "unauthenticated");
+      })
+      .catch(() => setAuthState("unauthenticated"));
+  }, []);
+
+  useEffect(() => {
+    if (authState !== "authenticated") return;
     fetchAllOrders();
     fetchBlogArticles();
-  }, [localOrders]);
+  }, [authState, localOrders]);
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoginError(null);
+    setLoginLoading(true);
+    try {
+      const res = await fetch("/api/admin-auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: loginUser, password: loginPass }),
+      });
+      if (res.ok) {
+        setAuthState("authenticated");
+        setLoginPass("");
+      } else {
+        const data = await res.json().catch(() => ({}));
+        setLoginError(data.error || "Kullanıcı adı veya şifre hatalı.");
+      }
+    } catch {
+      setLoginError("Bağlantı hatası oluştu.");
+    } finally {
+      setLoginLoading(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    await fetch("/api/admin-auth", { method: "DELETE" }).catch(() => {});
+    setAuthState("unauthenticated");
+    setOrders([]);
+    setBlogArticles([]);
+  };
 
   useEffect(() => {
     setPhoneDisplay(siteConfig.phoneDisplay);
@@ -283,6 +335,91 @@ export default function AdminPanelPage() {
   const totalRevenue = orders.reduce((acc, curr) => acc + curr.totalAmount, 0);
   const pendingOrdersCount = orders.filter((o) => o.status === "Yeni Sipariş").length;
 
+  if (authState === "checking") {
+    return (
+      <div className="min-h-[80vh] bg-[#070A10] flex items-center justify-center p-6">
+        <div className="text-center space-y-3 text-slate-300">
+          <RefreshCw className="w-7 h-7 text-orange-500 animate-spin mx-auto" />
+          <p className="text-xs font-bold">Yönetici oturumu kontrol ediliyor...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (authState === "unauthenticated") {
+    return (
+      <div className="min-h-[85vh] bg-[#070A10] flex items-center justify-center p-4">
+        <div className="w-full max-w-md rounded-3xl bg-[#0D1320] border border-slate-800 p-7 sm:p-9 shadow-2xl space-y-6 text-white">
+          <div className="text-center space-y-2">
+            <div className="w-14 h-14 rounded-2xl bg-orange-500/15 border border-orange-500/40 text-orange-400 flex items-center justify-center mx-auto">
+              <Lock className="w-7 h-7" />
+            </div>
+            <h1 className="text-xl font-black">Yönetici Girişi</h1>
+            <p className="text-xs text-slate-400">
+              Bu alan yalnızca yetkili Life GO Mobil yöneticilerine açıktır.
+            </p>
+          </div>
+
+          {loginError && (
+            <div className="p-3 rounded-xl bg-red-950/70 border border-red-500/40 text-red-300 text-xs font-bold text-center">
+              {loginError}
+            </div>
+          )}
+
+          <form onSubmit={handleLogin} className="space-y-4">
+            <div>
+              <label className="block text-xs font-bold text-slate-300 mb-1.5">
+                Kullanıcı Adı
+              </label>
+              <input
+                type="text"
+                required
+                autoComplete="username"
+                value={loginUser}
+                onChange={(e) => setLoginUser(e.target.value)}
+                placeholder="admin"
+                className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-orange-500"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-slate-300 mb-1.5">
+                Şifre
+              </label>
+              <input
+                type="password"
+                required
+                autoComplete="current-password"
+                value={loginPass}
+                onChange={(e) => setLoginPass(e.target.value)}
+                placeholder="••••••••••••"
+                className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-orange-500"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={loginLoading}
+              className="w-full py-3.5 rounded-xl bg-orange-500 hover:bg-orange-600 disabled:opacity-60 text-white font-black text-sm transition cursor-pointer shadow-lg shadow-orange-500/20"
+            >
+              {loginLoading ? "Giriş Yapılıyor..." : "Yönetim Paneline Gir"}
+            </button>
+          </form>
+
+          <div className="pt-2 text-center">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-white font-semibold"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>Ana Sayfaya Dön</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-6">
@@ -316,7 +453,7 @@ export default function AdminPanelPage() {
               }`}
             >
               <BookOpen className="w-4 h-4" />
-              <span>300 Blog &amp; Otomatik Yayın</span>
+              <span>400 Blog &amp; Otomatik Yayın</span>
               {blogStats && (
                 <span className="px-1.5 py-0.2 rounded-full bg-white/30 text-[10px]">
                   {blogStats.liveCount}/{blogStats.totalCount}
@@ -353,6 +490,15 @@ export default function AdminPanelPage() {
             >
               <Settings className="w-4 h-4" />
               <span>Site &amp; Video Ayarları</span>
+            </button>
+            <button
+              type="button"
+              onClick={handleLogout}
+              className="px-3.5 py-2 rounded-xl text-xs font-black text-red-600 hover:bg-red-50 transition cursor-pointer flex items-center gap-1.5"
+              title="Çıkış Yap"
+            >
+              <LogOut className="w-4 h-4" />
+              <span className="hidden sm:inline">Çıkış</span>
             </button>
           </div>
         </div>

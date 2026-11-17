@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 import { DEFAULT_SITE_CONFIG, SiteConfig } from "@/data/product";
+import { isAdminAuthenticated } from "@/lib/adminAuth";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const SETTINGS_FILE = path.join(DATA_DIR, "settings.json");
@@ -31,6 +32,9 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
+  if (!(await isAdminAuthenticated())) {
+    return NextResponse.json({ error: "Yetkisiz erişim." }, { status: 401 });
+  }
   try {
     const body = (await request.json()) as Partial<SiteConfig>;
     const current = loadSettings();

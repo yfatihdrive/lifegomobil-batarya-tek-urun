@@ -6,6 +6,7 @@ import {
   isArticleLive,
   type BlogArticle,
 } from "@/lib/blog";
+import { isAdminAuthenticated } from "@/lib/adminAuth";
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
@@ -21,10 +22,14 @@ export async function GET(req: NextRequest) {
     if (!found) {
       return NextResponse.json({ error: "Makale bulunamadı" }, { status: 404 });
     }
+    const liveNow = isArticleLive(found, todayStr);
+    if (!liveNow && !(await isAdminAuthenticated())) {
+      return NextResponse.json({ error: "Yetkisiz erişim." }, { status: 401 });
+    }
     return NextResponse.json({
       article: {
         ...found,
-        isLiveNow: isArticleLive(found, todayStr),
+        isLiveNow: liveNow,
       },
     });
   }
@@ -54,7 +59,10 @@ export async function GET(req: NextRequest) {
   const nextScheduled = upcomingList.length > 0 ? upcomingList[0] : null;
 
   if (mode === "admin") {
-    // Return lightweight summary of all 300 articles for fast admin management
+    if (!(await isAdminAuthenticated())) {
+      return NextResponse.json({ error: "Yetkisiz erişim." }, { status: 401 });
+    }
+    // Return lightweight summary of all 400 articles for fast admin management
     const summaries = all.map((a) => ({
       id: a.id,
       slug: a.slug,
@@ -124,6 +132,9 @@ export async function GET(req: NextRequest) {
 }
 
 export async function PATCH(req: NextRequest) {
+  if (!(await isAdminAuthenticated())) {
+    return NextResponse.json({ error: "Yetkisiz erişim." }, { status: 401 });
+  }
   try {
     const body = await req.json();
     const { action, id, status, scheduledAt, title, excerpt } = body;
