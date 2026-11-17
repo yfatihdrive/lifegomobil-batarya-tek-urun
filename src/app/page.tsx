@@ -413,6 +413,104 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
+
+              {/* iOS & Android App Download & Live Reporting Card */}
+              <div className="rounded-2xl bg-gradient-to-br from-slate-900 via-[#0E1726] to-slate-950 border border-slate-700/80 p-4 sm:p-5 space-y-3.5 shadow-xl">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div className="space-y-1">
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[10px] font-black uppercase tracking-wider">
+                      <Smartphone className="w-3 h-3" />
+                      <span>Ücretsiz Türkçe Mobil &amp; Web Uygulama</span>
+                    </div>
+                    <h3 className="text-sm sm:text-base font-black text-white leading-snug">
+                      Life GO Mobil Uygulamasını Yükleyin,{" "}
+                      <span className="text-orange-400">
+                        Canlı Takip Edin &amp; Rapor Alın!
+                      </span>
+                    </h3>
+                    <p className="text-[11px] sm:text-xs text-slate-300 leading-relaxed">
+                      Aracınızı haritada saniye saniye izleyin; hız, duraklama,
+                      km raporu, geçmiş rota ve ses kayıtlarına tek dokunuşla
+                      ulaşın.
+                    </p>
+                  </div>
+                </div>
+
+                {/* iOS App Store & Google Play Store Badges */}
+                <div className="grid grid-cols-2 gap-2.5">
+                  <a
+                    href="#canli-demo"
+                    className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-black hover:bg-slate-950 border border-slate-700 hover:border-slate-500 transition group"
+                  >
+                    {/* Apple iOS Logo */}
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="w-6 h-6 text-white shrink-0 fill-current"
+                      aria-hidden="true"
+                    >
+                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.96 6.32c.68-.83 1.14-1.98 1.01-3.13-.98.04-2.17.65-2.87 1.48-.62.72-1.17 1.89-1.02 3.01 1.1.08 2.2-.53 2.88-1.36z" />
+                    </svg>
+                    <div className="text-left leading-tight">
+                      <span className="block text-[9px] text-slate-400 font-semibold uppercase">
+                        iPhone &amp; iPad
+                      </span>
+                      <span className="block text-xs sm:text-sm font-black text-white group-hover:text-orange-400 transition">
+                        App Store (iOS)
+                      </span>
+                    </div>
+                  </a>
+
+                  <a
+                    href="#canli-demo"
+                    className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-black hover:bg-slate-950 border border-slate-700 hover:border-emerald-500/60 transition group"
+                  >
+                    {/* Google Play Android Logo */}
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="w-6 h-6 shrink-0"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill="#34A853"
+                        d="M3.61 1.814L13.793 12 3.61 22.186a1.75 1.75 0 0 1-.485-1.228V3.042c0-.478.186-.912.485-1.228z"
+                      />
+                      <path
+                        fill="#4285F4"
+                        d="M17.347 8.446L13.793 12l3.554 3.554 4.017-2.295c.848-.484.848-1.534 0-2.018l-4.017-2.795z"
+                      />
+                      <path
+                        fill="#FBBC05"
+                        d="M3.61 22.186L13.793 12l3.554 3.554-12.536 7.163c-.456.26-.965.246-1.201-.531z"
+                      />
+                      <path
+                        fill="#EA4335"
+                        d="M17.347 8.446L13.793 12 3.61 1.814c.236-.777.745-.791 1.201-.531l12.536 7.163z"
+                      />
+                    </svg>
+                    <div className="text-left leading-tight">
+                      <span className="block text-[9px] text-slate-400 font-semibold uppercase">
+                        Android Cihazlar
+                      </span>
+                      <span className="block text-xs sm:text-sm font-black text-white group-hover:text-emerald-400 transition">
+                        Google Play
+                      </span>
+                    </div>
+                  </a>
+                </div>
+
+                {/* Quick App Capabilities */}
+                <div className="flex flex-wrap items-center gap-1.5 text-[10px] sm:text-[11px] font-bold text-slate-300">
+                  <span className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800">
+                    📍 7/24 Canlı Harita
+                  </span>
+                  <span className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800">
+                    📊 180 Gün Rota &amp; Hız Raporu
+                  </span>
+                  <span className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800">
+                    🔔 Anlık Alarm &amp; Ses Kayıt
+                  </span>
+                </div>
+              </div>
             </div>
 
             {/* RIGHT COLUMN: Product Title, 4-Model Selector & Buy Box (6 cols) */}
