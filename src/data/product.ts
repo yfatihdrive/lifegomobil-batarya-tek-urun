@@ -246,6 +246,49 @@ export const SOLAR_PRODUCT_IMAGES = [
   },
 ];
 
+export const LG1000_PRODUCT_IMAGES = [
+  {
+    id: "lg1000-main",
+    src: "/images/lg1000/lg1000-1-main.jpg",
+    alt: "Life GO Mobil LG-1000 Max (GF60L) 10.000 mAh Mıknatıslı GPS Takip Cihazı",
+    caption:
+      "LG-1000 Max (GF60/60L) 10.000 mAh — Güçlü N54 Mıknatıs & Canlı Mobil Takip Uygulaması",
+    badge: "10.000 mAh • N54 Mıknatıs",
+  },
+  {
+    id: "lg1000-ip67",
+    src: "/images/lg1000/lg1000-2-ip67.jpg",
+    alt: "GF60/60L IP67 Su Geçirmez Bataryalı Takip Cihazı",
+    caption:
+      "IP67 Su Geçirmezlik — Yağmur, Çamur ve Zorlu Şasi Altı Koşullarda Kesintisiz Çalışma",
+    badge: "IP67 Su Geçirmez",
+  },
+  {
+    id: "lg1000-features",
+    src: "/images/lg1000/lg1000-3-features.jpg",
+    alt: "Çok Fonksiyonlu GF60/GF60L 10.000 mAh Mıknatıslı GPS Takip Cihazı",
+    caption:
+      "4G+2G, 10.000 mAh Batarya, Ses Dinleme, Hafıza Depolama, Geo-Fence & FOTA",
+    badge: "Çok Fonksiyonlu GF60/60L",
+  },
+  {
+    id: "lg1000-alarm",
+    src: "/images/lg1000/lg1000-4-alarm.jpg",
+    alt: "LG-1000 Max Dahili Işık Sensörlü Sökülme Alarmı",
+    caption:
+      "Sökülme Alarmı — Yerleşik Işık Sensörü ile Cihaz Çıkarıldığı An Uygulamaya Acil Uyarı",
+    badge: "Sökülme & Işık Sensörü",
+  },
+  {
+    id: "lg1000-tracking",
+    src: "/images/lg1000/lg1000-5-tracking.jpg",
+    alt: "Tır, Kamyon ve Filo İçin Anlık Canlı Takip ve Geçmiş Rota",
+    caption:
+      "Anlık Takip — Kamyon, Çekici, Otobüs ve Uzun Yol Filolarında 365 Güne Kadar Nöbet",
+    badge: "Anlık Filo & Rota Takibi",
+  },
+];
+
 // 4 Battery Capacity Models: 3.000 mAh (6.950 TL), 6.000 mAh (7.950 TL), 10.000 mAh (9.950 TL), 20.000 mAh (14.950 TL)
 export const PRODUCT_PACKAGES: ProductPackage[] = [
   {

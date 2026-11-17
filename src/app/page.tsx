@@ -38,6 +38,7 @@ import {
 import {
   PRODUCT_IMAGES,
   SOLAR_PRODUCT_IMAGES,
+  LG1000_PRODUCT_IMAGES,
   PRODUCT_PACKAGES,
   PRODUCT_ADDONS,
   TECHNICAL_SPECS,
@@ -99,15 +100,30 @@ export default function HomePage() {
   const selectedPkg =
     PRODUCT_PACKAGES.find((p) => p.id === selectedPkgId) || PRODUCT_PACKAGES[0];
   const isSolarSelected = selectedPkg.id === "model-solar-10000mah";
-  const galleryImages = isSolarSelected ? SOLAR_PRODUCT_IMAGES : PRODUCT_IMAGES;
+  const isLg1000Selected = selectedPkg.id === "model-10000mah";
+  const galleryImages = isSolarSelected
+    ? SOLAR_PRODUCT_IMAGES
+    : isLg1000Selected
+    ? LG1000_PRODUCT_IMAGES
+    : PRODUCT_IMAGES;
   const safeImageIdx =
     activeImageIdx < galleryImages.length ? activeImageIdx : 0;
 
   const handleSelectPackage = (pkgId: string) => {
-    const wasSolar = selectedPkgId === "model-solar-10000mah";
-    const willBeSolar = pkgId === "model-solar-10000mah";
+    const prevGallery =
+      selectedPkgId === "model-solar-10000mah"
+        ? "solar"
+        : selectedPkgId === "model-10000mah"
+        ? "lg1000"
+        : "default";
+    const nextGallery =
+      pkgId === "model-solar-10000mah"
+        ? "solar"
+        : pkgId === "model-10000mah"
+        ? "lg1000"
+        : "default";
     setSelectedPkgId(pkgId);
-    if (wasSolar !== willBeSolar) {
+    if (prevGallery !== nextGallery) {
       setActiveImageIdx(0);
       setShowGalleryVideo(false);
     }
@@ -274,7 +290,9 @@ export default function HomePage() {
                       src={galleryImages[safeImageIdx].src}
                       alt={galleryImages[safeImageIdx].alt}
                       className={`w-full h-full transition-transform duration-500 group-hover:scale-[1.02] ${
-                        isSolarSelected ? "object-contain bg-white" : "object-cover"
+                        isSolarSelected || isLg1000Selected
+                          ? "object-contain bg-white"
+                          : "object-cover"
                       }`}
                     />
 
@@ -595,6 +613,42 @@ export default function HomePage() {
                                   <img
                                     src={sImg.src}
                                     alt={sImg.alt}
+                                    className="w-full h-full object-cover"
+                                  />
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* 5-Image Gallery Preview when 10.000 mAh LG-1000 Max is Selected */}
+                        {isSelected && pkg.id === "model-10000mah" && (
+                          <div
+                            onClick={(e) => e.stopPropagation()}
+                            className="mt-4 pt-3 border-t border-orange-500/30 space-y-2.5"
+                          >
+                            <div className="text-xs font-extrabold text-orange-300">
+                              📸 LG-1000 Max (GF60/60L) 10.000 mAh Ürün Görselleri:
+                            </div>
+                            <div className="grid grid-cols-5 gap-2">
+                              {LG1000_PRODUCT_IMAGES.map((lImg, lIdx) => (
+                                <button
+                                  key={lImg.id}
+                                  type="button"
+                                  onClick={() => {
+                                    setShowGalleryVideo(false);
+                                    setActiveImageIdx(lIdx);
+                                  }}
+                                  className={`rounded-xl overflow-hidden border-2 aspect-4/3 bg-white cursor-pointer transition ${
+                                    safeImageIdx === lIdx
+                                      ? "border-orange-400 ring-2 ring-orange-400/40 scale-[1.03]"
+                                      : "border-slate-700 opacity-85 hover:opacity-100"
+                                  }`}
+                                  title={lImg.caption}
+                                >
+                                  <img
+                                    src={lImg.src}
+                                    alt={lImg.alt}
                                     className="w-full h-full object-cover"
                                   />
                                 </button>
