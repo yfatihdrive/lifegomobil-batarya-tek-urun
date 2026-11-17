@@ -195,6 +195,57 @@ export const PRODUCT_IMAGES = [
   },
 ];
 
+export const SOLAR_PRODUCT_IMAGES = [
+  {
+    id: "solar-main",
+    src: "/images/solar/solar-1-main.jpg",
+    alt: "Life GO Mobil GF70L 10.000 mAh Güneş Enerjili GPS Takip Cihazı",
+    caption:
+      "GF70L 10.000 mAh Güneş Enerjili Takip Cihazı — Kendi Kendini Şarj Eder, Yıllarca Şarja Takmadan Çalışır",
+    badge: "☀️ Güneş Enerjili • 10.000 mAh",
+  },
+  {
+    id: "solar-features",
+    src: "/images/solar/solar-2-features.jpg",
+    alt: "GF70L Güneş Enerjili Multi-Function 4G GPS Takip Cihazı Özellikleri",
+    caption:
+      "4G LTE, 10.000 mAh Batarya, Güneş Paneli, Güçlü Mıknatıs, Ses Dinleme & Sökülme Alarmı",
+    badge: "Multi-Function GF70L",
+  },
+  {
+    id: "solar-power",
+    src: "/images/solar/solar-3-power.jpg",
+    alt: "Solar Güç — Güneş Enerjisiyle Kendi Kendini Şarj Eden Takip Cihazı",
+    caption:
+      "Solar Güç: Gün Işığıyla Kendi Bataryasını Sürekli Doldurur — Yıllarca Şarj Kablosu Gerektirmez",
+    badge: "☀️ Solar Güç • Kesintisiz",
+  },
+  {
+    id: "solar-series",
+    src: "/images/solar/solar-4-series.jpg",
+    alt: "Kablosuz Mıknatıslı GPS Takip Cihazı Serisi — GF70L 10.000 mAh Güneş Panelli",
+    caption:
+      "GF70L (152×83×35 mm) — 10.000 mAh Batarya + Entegre Yüksek Verimli Güneş Paneli",
+    badge: "152×83×35 mm • Solar Panel",
+  },
+  {
+    id: "solar-alarm",
+    src: "/images/solar/solar-5-alarm.jpg",
+    alt: "GF70L Optik Işık Sensörlü Sökülme Alarmı",
+    caption:
+      "Yerleşik Işık Sensörü — Cihaz Yerinden Söküldüğünde veya Düştüğünde Anında Konum & Alarm Gönderir",
+    badge: "Sökülme & Işık Sensörü",
+  },
+  {
+    id: "solar-ip67",
+    src: "/images/solar/solar-6-ip67.jpg",
+    alt: "GF70L IP67 Su Geçirmez Konteyner, Tekne ve Dorse Takibi",
+    caption:
+      "IP67 Su Geçirmez Zırh — Deniz Konteyneri, Tekne, Dorse ve Açık Saha Koşullarında Yıllarca Çalışır",
+    badge: "IP67 Su Geçirmez",
+  },
+];
+
 // 4 Battery Capacity Models: 3.000 mAh (6.950 TL), 6.000 mAh (7.950 TL), 10.000 mAh (9.950 TL), 20.000 mAh (14.950 TL)
 export const PRODUCT_PACKAGES: ProductPackage[] = [
   {
@@ -273,16 +324,16 @@ export const PRODUCT_PACKAGES: ProductPackage[] = [
     ],
   },
   {
-    id: "model-20000mah",
-    modelCode: "LG-2000 Ultra",
-    mah: 20000,
-    name: "20.000 mAh Bataryalı Takip Cihazı (LG-2000 Ultra)",
-    badge: "MAKSİMUM KAPASİTE • 2 YIL BEKLEME",
+    id: "model-solar-10000mah",
+    modelCode: "GF70L Solar",
+    mah: 10000,
+    name: "10.000 mAh Güneş Enerjili (Solar) Takip Cihazı (GF70L)",
+    badge: "☀️ GÜNEŞ ENERJİLİ • YILLARCA ŞARJSIZ",
     shortDesc:
-      "Tır dorsesi, konteyner, iş makinesi, sezonluk bağlı tekneler ve aylarca şarja ulaşılamayan varlıklar için ekstrem güç.",
-    activeDaysText: "60 – 110 Gün Aktif",
-    standbyDaysText: "365 – 730 Gün (2 Yıl) Nöbet",
-    dimensionsText: "112 × 68 × 38 mm • 360g",
+      "Dahili güneş paneli ile kendi kendini şarj eder; bu sayede tır dorsesi, konteyner, tekne, karavan ve iş makinelerinde YILLARCA şarja takmadan kesintisiz çalışır.",
+    activeDaysText: "Güneşle Sınırsız / 60+ Gün",
+    standbyDaysText: "Yıllarca Şarja Takmadan Çalışır",
+    dimensionsText: "152 × 83 × 35 mm • Güneş Panelli",
     unitCount: 1,
     price: 14950,
     oldPrice: 17900,
@@ -290,11 +341,11 @@ export const PRODUCT_PACKAGES: ProductPackage[] = [
     savings: 2950,
     popular: false,
     features: [
-      "20.000 mAh Endüstriyel Batarya (60–110 Gün Aktif / 730 Gün Uyku!)",
-      "Kabin İçi Akustik Ses Kayıt Etme Mikrofonu",
-      "Ekstra Güçlendirilmiş N54 Mıknatıs + IP67 Zırhlı Yanmaz Kasa",
-      "Dahili 4G M2M SIM Kart + 12 Ay Ücretsiz Kurumsal Web & Mobil Panel",
-      "Öncelikli VIP WhatsApp Destek & 2 Yıl Birebir Değişim Garantisi",
+      "10.000 mAh Batarya + Entegre Güneş Paneli (Kendi Kendini Şarj Eder!)",
+      "Güneş Enerjisi Sayesinde Yıllarca Şarja Takmadan Kesintisiz Çalışma",
+      "Ekstra Güçlü Mıknatıs + IP67 Su Geçirmez Zırh + Optik Sökülme Alarmı",
+      "Dahili 4G M2M SIM Kart + 2 Yıllık Ücretsiz Kurumsal Web & Mobil Panel",
+      "Ses Dinleme Özelliği, FOTA Güncelleme & 2 Yıl Birebir Değişim Garantisi",
     ],
   },
 ];
@@ -460,8 +511,8 @@ export const TECHNICAL_SPECS: TechnicalSpecGroup[] = [
         highlight: true,
       },
       {
-        label: "LG-2000 Ultra (20.000 mAh Model)",
-        value: "60–110 Gün Aktif • 365–730 Gün Nöbet • 112×68×38 mm (14.950 ₺)",
+        label: "GF70L Solar (10.000 mAh Güneş Enerjili)",
+        value: "Güneş Paneliyle Kendi Kendini Şarj Eder • Yıllarca Şarjsız • 152×83×35 mm (14.950 ₺)",
         highlight: true,
       },
       {

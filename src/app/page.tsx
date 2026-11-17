@@ -37,6 +37,7 @@ import {
 } from "lucide-react";
 import {
   PRODUCT_IMAGES,
+  SOLAR_PRODUCT_IMAGES,
   PRODUCT_PACKAGES,
   PRODUCT_ADDONS,
   TECHNICAL_SPECS,
@@ -97,6 +98,20 @@ export default function HomePage() {
 
   const selectedPkg =
     PRODUCT_PACKAGES.find((p) => p.id === selectedPkgId) || PRODUCT_PACKAGES[0];
+  const isSolarSelected = selectedPkg.id === "model-solar-10000mah";
+  const galleryImages = isSolarSelected ? SOLAR_PRODUCT_IMAGES : PRODUCT_IMAGES;
+  const safeImageIdx =
+    activeImageIdx < galleryImages.length ? activeImageIdx : 0;
+
+  const handleSelectPackage = (pkgId: string) => {
+    const wasSolar = selectedPkgId === "model-solar-10000mah";
+    const willBeSolar = pkgId === "model-solar-10000mah";
+    setSelectedPkgId(pkgId);
+    if (wasSolar !== willBeSolar) {
+      setActiveImageIdx(0);
+      setShowGalleryVideo(false);
+    }
+  };
 
   const addonsSum = PRODUCT_ADDONS.filter((a) =>
     selectedAddonIds.includes(a.id)
@@ -256,14 +271,16 @@ export default function HomePage() {
                 ) : (
                   <>
                     <img
-                      src={PRODUCT_IMAGES[activeImageIdx].src}
-                      alt={PRODUCT_IMAGES[activeImageIdx].alt}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                      src={galleryImages[safeImageIdx].src}
+                      alt={galleryImages[safeImageIdx].alt}
+                      className={`w-full h-full transition-transform duration-500 group-hover:scale-[1.02] ${
+                        isSolarSelected ? "object-contain bg-white" : "object-cover"
+                      }`}
                     />
 
                     {/* Top Left Hardware Badge */}
                     <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-[#0B0F17]/90 backdrop-blur-md border border-orange-500/40 text-orange-400 text-xs font-extrabold shadow-lg">
-                      {PRODUCT_IMAGES[activeImageIdx].badge}
+                      {galleryImages[safeImageIdx].badge}
                     </div>
 
                     {/* Top Right Watch 60s Video Button */}
@@ -279,19 +296,19 @@ export default function HomePage() {
                     {/* Bottom Caption Overlay */}
                     <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-4 pt-10 flex items-center justify-between gap-2">
                       <p className="text-xs sm:text-sm font-bold text-slate-100">
-                        {PRODUCT_IMAGES[activeImageIdx].caption}
+                        {galleryImages[safeImageIdx].caption}
                       </p>
                       <span className="text-[11px] font-mono text-slate-400 shrink-0">
-                        {activeImageIdx + 1} / {PRODUCT_IMAGES.length}
+                        {safeImageIdx + 1} / {galleryImages.length}
                       </span>
                     </div>
                   </>
                 )}
               </div>
 
-              {/* Thumbnail Strip (5 Photos + 1 60s Video / YouTube Thumbnail) */}
+              {/* Thumbnail Strip */}
               <div className="grid grid-cols-6 gap-2">
-                {PRODUCT_IMAGES.map((img, idx) => (
+                {galleryImages.map((img, idx) => (
                   <button
                     key={img.id}
                     type="button"
@@ -300,7 +317,7 @@ export default function HomePage() {
                       setActiveImageIdx(idx);
                     }}
                     className={`relative rounded-2xl overflow-hidden aspect-4/3 border-2 transition cursor-pointer ${
-                      !showGalleryVideo && activeImageIdx === idx
+                      !showGalleryVideo && safeImageIdx === idx
                         ? "border-orange-500 ring-2 ring-orange-500/30 scale-[1.02]"
                         : "border-slate-800 opacity-65 hover:opacity-100 hover:border-slate-600"
                     }`}
@@ -470,13 +487,16 @@ export default function HomePage() {
                 <div className="space-y-2.5">
                   {PRODUCT_PACKAGES.map((pkg) => {
                     const isSelected = pkg.id === selectedPkgId;
+                    const isSolarPkg = pkg.id === "model-solar-10000mah";
                     return (
                       <div
                         key={pkg.id}
-                        onClick={() => setSelectedPkgId(pkg.id)}
+                        onClick={() => handleSelectPackage(pkg.id)}
                         className={`p-4 rounded-2xl border-2 transition cursor-pointer ${
                           isSelected
-                            ? "bg-orange-500/10 border-orange-500 shadow-lg shadow-orange-500/10"
+                            ? isSolarPkg
+                              ? "bg-amber-500/15 border-amber-400 shadow-lg shadow-amber-500/15"
+                              : "bg-orange-500/10 border-orange-500 shadow-lg shadow-orange-500/10"
                             : "bg-slate-900/70 border-slate-800 hover:border-slate-700"
                         }`}
                       >
@@ -501,6 +521,8 @@ export default function HomePage() {
                                     className={`text-[10px] font-extrabold px-2 py-0.5 rounded-md ${
                                       pkg.popular
                                         ? "bg-orange-500 text-white"
+                                        : isSolarPkg
+                                        ? "bg-amber-400 text-slate-950 font-black"
                                         : "bg-slate-800 text-emerald-400 border border-slate-700"
                                     }`}
                                   >
@@ -535,6 +557,51 @@ export default function HomePage() {
                             </div>
                           </div>
                         </div>
+
+                        {/* Big Bold Solar Self-Charging Banner & 6-Image Gallery Preview when Selected */}
+                        {isSelected && isSolarPkg && (
+                          <div
+                            onClick={(e) => e.stopPropagation()}
+                            className="mt-4 pt-4 border-t border-amber-400/30 space-y-3"
+                          >
+                            <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-500/20 via-orange-500/15 to-emerald-500/20 border-2 border-amber-400/80 text-center space-y-1.5 shadow-lg">
+                              <div className="text-base sm:text-xl font-black text-amber-300 leading-tight tracking-tight uppercase">
+                                ☀️ GÜNEŞ ENERJİSİ İLE KENDİ KENDİNİ ŞARJ EDER!
+                              </div>
+                              <div className="text-sm sm:text-lg font-black text-white leading-snug">
+                                BU SAYEDE YILLARCA ŞARJA TAKMADAN KESİNTİSİZ ÇALIŞIR
+                              </div>
+                              <p className="text-xs text-emerald-300 font-bold">
+                                10.000 mAh Batarya + Entegre Solar Panel (GF70L) • Kablo &amp; Şarj Derdi Yok!
+                              </p>
+                            </div>
+
+                            <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+                              {SOLAR_PRODUCT_IMAGES.map((sImg, sIdx) => (
+                                <button
+                                  key={sImg.id}
+                                  type="button"
+                                  onClick={() => {
+                                    setShowGalleryVideo(false);
+                                    setActiveImageIdx(sIdx);
+                                  }}
+                                  className={`rounded-xl overflow-hidden border-2 aspect-4/3 bg-white cursor-pointer transition ${
+                                    safeImageIdx === sIdx
+                                      ? "border-amber-400 ring-2 ring-amber-400/40 scale-[1.03]"
+                                      : "border-slate-700 opacity-85 hover:opacity-100"
+                                  }`}
+                                  title={sImg.caption}
+                                >
+                                  <img
+                                    src={sImg.src}
+                                    alt={sImg.alt}
+                                    className="w-full h-full object-cover"
+                                  />
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                       </div>
                     );
                   })}
